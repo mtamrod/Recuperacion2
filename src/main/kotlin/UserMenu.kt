@@ -8,7 +8,7 @@ class UserMenu {
     fun mostrarMenu() {
         do {
             println("MENÚ:")
-            println("1. Generar tipoSerie")
+            println("1. Generar TipoSerie")
             println("2. Jugar al ahorcado:")
             println("3. Salir")
             println("Por favor, selecciona una opción: ")
@@ -24,7 +24,7 @@ class UserMenu {
         } while (option != 3)
     }
 
-    fun generarSerie() {
+    private fun generarSerie() {
         var valorMax: Double
         var valorMin: Double
 
@@ -36,19 +36,19 @@ class UserMenu {
 
             val resta: Double = valorMax - valorMin
 
-        } while (valorMax.toInt() >= 31 && valorMax.toInt() <= 100 && valorMin.toInt() <= 69 && valorMin.toInt() >= 1 && resta.toInt() > 30)
+        } while (valorMax.toInt() in 31..100 && valorMin.toInt() <= 69 && valorMin.toInt() >= 1 && resta.toInt() > 30)
 
         println("Introduce un número entre [${valorMin.toInt()} - ${valorMax.toInt()}]: ")
         val numeroIntro: Int = readln().toInt()
 
         if (valorMax.toInt() - numeroIntro > numeroIntro - valorMin.toInt()) {
-            tipoSerie.serieCreciente(valorMax, numeroIntro)
+            TipoSerie.serieCreciente(valorMax, numeroIntro)
         } else {
-            tipoSerie.serieDecreciente(valorMin, numeroIntro)
+            TipoSerie.serieDecreciente(valorMin, numeroIntro)
         }
     }
 
-    fun jugarAhorcado() {
+    private fun jugarAhorcado() {
         //TODO:
     }
 }

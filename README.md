@@ -8,7 +8,7 @@ Se trata de desarrollar un programa mediante el paradigma de la POO que muestre 
 La aplicación debe mostrar un menú con las siguientes opciones:
 
 ```kotlin
-1. Generar tipoSerie.
+1. Generar TipoSerie.
 2. Jugar al ahorcado.
 3. Salir.
 Por favor, selecciona una opción: 
@@ -30,7 +30,7 @@ La información que mostramos y recibimos de la consola se debe manejar con una 
 
 ***No será válido la creación de un Object o un Companion object para realizar esta labor***.
      
-## 3. Generar tipoSerie.
+## 3. Generar TipoSerie.
        
 La opción 1 del menú, ```Generar Serie```, debe crear un rango aleatorio entre 1 y 100 y después solicitar un valor que debe estar dentro de dicho rango. El rango debe tener, al menos, 30 números entre el valor mínimo y el máximo. 
 Una vez creado internamente un rango que cumpla dichos requisitos, mostrará un mensaje como el que sigue:
@@ -41,7 +41,7 @@ Inserte un número [23-77] ->
 
 En este ejemplo se ha generado aleatoriamente el rango 23-77, que está dentro de 1-100 y entre los valores mínimo y máximo existen, al menos, 30 números (77 - 23 = 54)
 
-Dependiendo del número introducido, si está más cercano al mínimo o al máximo del rango deberá mostrar un tipo de tipoSerie u otra.
+Dependiendo del número introducido, si está más cercano al mínimo o al máximo del rango deberá mostrar un tipo de TipoSerie u otra.
 
 ### 2.1. Serie Creciente.
       
@@ -63,7 +63,7 @@ Inserte un número [23-77] -> 53
 Suma => 1625
 ```
 
-La `Suma` final de la tipoSerie corresponde con la suma de todos los números desde el número introducido al máximo del rango.
+La `Suma` final de la TipoSerie corresponde con la suma de todos los números desde el número introducido al máximo del rango.
 
 ### 2.2. Serie Decreciente.
 
@@ -91,11 +91,11 @@ Para desarrollar estas series, debes crear la clase ```GeneradorSeries```, que s
    
    - ```generarRangoAleatorio()```: retorna los valores minimos y máximos de nuestro rango. Debe cumplir que el rango generado tenga al menos 30 números y esté dentro de los valores de referencia 1-100.
 	  
-	 - ```generarSerie()```: retorna la tipoSerie correcta.
+	 - ```generarSerie()```: retorna la TipoSerie correcta.
 	  
-	 - ```serieCreciente()```: retorna la tipoSerie cuando el número introducido por el usuario está más cercano al rango superior... será llamado desde ```generarSerie()```.
+	 - ```serieCreciente()```: retorna la TipoSerie cuando el número introducido por el usuario está más cercano al rango superior... será llamado desde ```generarSerie()```.
 	  
-	 - ```serieDecreciente()```: retorna la tipoSerie cuando el número introducido por el usuario está más cercano al rango inferior... será llamado desde ```generarSerie()```.
+	 - ```serieDecreciente()```: retorna la TipoSerie cuando el número introducido por el usuario está más cercano al rango inferior... será llamado desde ```generarSerie()```.
 	  
 	 - Declarar también las constantes que determinan el mínimo y máximo dónde podemos generar nuestro rango, es decir, 1 y 100.
 	  
