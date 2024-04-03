@@ -1,5 +1,3 @@
-
-
 class UserMenu {
     interface IMenu {
         fun mostrarMenu()
@@ -10,12 +8,12 @@ class UserMenu {
     fun mostrarMenu() {
         do {
             println("MENÚ:")
-            println("1. Generar serie")
+            println("1. Generar tipoSerie")
             println("2. Jugar al ahorcado:")
             println("3. Salir")
             println("Por favor, selecciona una opción: ")
 
-            val option = readln().toIntOrNull()
+            val option: Int? = readln().toIntOrNull()
 
             when (option) {
                 1 -> generarSerie()
@@ -36,17 +34,17 @@ class UserMenu {
             valorMin = Math.random()
             valorMin *= 100
 
-            val resta = valorMax - valorMin
+            val resta: Double = valorMax - valorMin
 
         } while (valorMax.toInt() >= 31 && valorMax.toInt() <= 100 && valorMin.toInt() <= 69 && valorMin.toInt() >= 1 && resta.toInt() > 30)
 
         println("Introduce un número entre [${valorMin.toInt()} - ${valorMax.toInt()}]: ")
-        val numeroIntro = readln().toInt()
+        val numeroIntro: Int = readln().toInt()
 
         if (valorMax.toInt() - numeroIntro > numeroIntro - valorMin.toInt()) {
-            serie.serieCreciente(valorMax, numeroIntro)
+            tipoSerie.serieCreciente(valorMax, numeroIntro)
         } else {
-            serie.serieDecreciente(valorMin, numeroIntro)
+            tipoSerie.serieDecreciente(valorMin, numeroIntro)
         }
     }
 
