@@ -49,6 +49,6 @@ class UserMenu {
     }
 
     private fun jugarAhorcado() {
-        //TODO:
+        //TODO: Llamar al método jugar() de la clase Ahorcado
     }
 }
