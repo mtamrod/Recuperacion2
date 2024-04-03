@@ -1,11 +1,11 @@
-/**
-class serie {
-    serieCreciente () {
+open class serie {
+    companion object {
+        fun serieCreciente (valorMax: Double, numeroIntro: Int) {
 
-    }
+        }
 
-    serieDecreciente() {
+        fun serieDecreciente(valorMin: Double, numeroIntro: Int) {
 
+        }
     }
 }
- */

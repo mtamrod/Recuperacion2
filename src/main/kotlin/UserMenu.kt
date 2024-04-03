@@ -1,4 +1,4 @@
-import java.lang.Math.random
+
 
 class UserMenu {
     interface IMenu {
@@ -18,30 +18,39 @@ class UserMenu {
             val option = readln().toIntOrNull()
 
             when (option) {
-                1 -> //generarserie
-                2 -> //jugarahorcado
+                1 -> generarSerie()
+                2 -> jugarAhorcado()
                 3 -> println("Saliendo...")
                 else -> println("Opción no válida")
             }
         } while (option != 3)
     }
 
-    fun generarSerie(): Double {
-        do {
-            var max = Math.random()
-            max *= 100
-            var min= Math.random()
-            min *= 100
-
-            val resta = max-min
-
-        }while (max.toInt() >= 31 && max.toInt() <= 100 && min.toInt() <= 69 && min.toInt() >= 1 && resta.toInt() > 30)
+    fun generarSerie() {
+        var valorMax: Double
+        var valorMin: Double
 
         do {
-            println(max)
-            println("Introduce un número entre el rango: ")
-            val numeroIntro = readln().toInt()
+            valorMax = Math.random()
+            valorMax *= 100
+            valorMin = Math.random()
+            valorMin *= 100
 
-        } while ()
+            val resta = valorMax - valorMin
+
+        } while (valorMax.toInt() >= 31 && valorMax.toInt() <= 100 && valorMin.toInt() <= 69 && valorMin.toInt() >= 1 && resta.toInt() > 30)
+
+        println("Introduce un número entre [${valorMin.toInt()} - ${valorMax.toInt()}]: ")
+        val numeroIntro = readln().toInt()
+
+        if (valorMax.toInt() - numeroIntro > numeroIntro - valorMin.toInt()) {
+            serie.serieCreciente(valorMax, numeroIntro)
+        } else {
+            serie.serieDecreciente(valorMin, numeroIntro)
+        }
+    }
+
+    fun jugarAhorcado() {
+        //TODO:
     }
 }
