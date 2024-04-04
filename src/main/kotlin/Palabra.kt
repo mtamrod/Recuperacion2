@@ -1,9 +1,9 @@
 import com.google.gson.Gson
 import java.io.File
 
-RUTA_TEXTO = "src/palabras.txt"
-RUTA_JSON = "src/palabras.json"
-ES_JSON = true
+//RUTA_TEXTO = "src/palabras.txt"
+//RUTA_JSON = "src/palabras.json"
+//ES_JSON = true
 
 data class Palabras(val palabras: List<String>)
 

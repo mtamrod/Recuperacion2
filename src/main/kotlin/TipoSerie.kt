@@ -1,31 +1,51 @@
 open class TipoSerie {
     companion object {
-        fun serieCreciente (valorMax: Double, numeroIntro: Int) {
+        fun serieCreciente (valorMax: Int, numeroIntro: Int) {
             var cont = 0
-            val resta: Double = valorMax - numeroIntro
-            var sumaRestas: Double = resta
+            var numeroIntro1 = numeroIntro
+            var sumaRestas = numeroIntro1
+            val numeros: MutableList<String> = mutableListOf()
 
-            println("$resta (0)")
+            numeros.add(numeroIntro1.toString())
+            println("$numeroIntro1 ($cont)")
             do {
                 cont++
-                println("${resta.toInt()} + ${resta.toInt()+cont} ($cont)")
-                sumaRestas += resta.toInt()
-            } while (resta.toInt() < valorMax.toInt())
-            println("Suma => ${sumaRestas.toInt()}")
+                numeroIntro1 += 1
+                numeros.add(numeroIntro1.toString())
+                val numerosConMas = numeros.joinToString("+")
+                println("$numerosConMas ($cont)")
+                sumaRestas += numeroIntro
+            } while (numeroIntro1 < valorMax)
+
+            println("Suma => ${sumaRestas}")
         }
 
-        fun serieDecreciente(valorMin: Double, numeroIntro: Int) {
-            var cont = 1
-            val resta: Double = numeroIntro - valorMin
-            var sumaRestas: Double = resta
+        fun serieDecreciente(valorMin: Int, numeroIntro: Int) {
+            var cont = 0
+            var numeroIntro1 = numeroIntro
+            var sumaRestas = numeroIntro1
+            var sumaDeSumas = numeroIntro1
+            val numeros: MutableList<String> = mutableListOf()
 
-            println("0$cont -> $resta")
+            numeros.add(numeroIntro1.toString())
+            println("0$cont-> $numeroIntro1 = $numeroIntro1")
             do {
+
                 cont++
-                println(" 0$cont -> ${resta.toInt()} - ${resta.toInt()+cont}")
-                sumaRestas += resta.toInt()
-            } while (resta.toInt() > valorMin)
-            println("Total => ${sumaRestas.toInt()}")
+                numeroIntro1 -= 1
+                numeros.add(numeroIntro1.toString())
+                val numerosConMas = numeros.joinToString("+")
+                sumaRestas += numeroIntro1
+                sumaDeSumas += sumaRestas
+                if (cont < 10) {
+                    println("0$cont-> $numerosConMas = $sumaRestas")
+                } else {
+                    println("$cont-> $numerosConMas = $sumaRestas")
+                }
+
+            } while (numeroIntro1 > valorMin)
+
+            println("Suma => ${sumaDeSumas}")
         }
     }
 }

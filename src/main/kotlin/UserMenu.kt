@@ -25,23 +25,23 @@ class UserMenu {
     }
 
     private fun generarSerie() {
-        var valorMax: Double
-        var valorMin: Double
+        var valorMax: Int
+        var valorMin: Int
 
         do {
-            valorMax = Math.random()
+            valorMax = Math.random().toInt()
             valorMax *= 100
-            valorMin = Math.random()
+            valorMin = Math.random().toInt()
             valorMin *= 100
 
-            val resta: Double = valorMax - valorMin
+            val resta = valorMax - valorMin
 
-        } while (valorMax.toInt() in 31..100 && valorMin.toInt() <= 69 && valorMin.toInt() >= 1 && resta.toInt() > 30)
+        } while (valorMax in 31..100 && valorMin <= 69 && valorMin >= 1 && resta > 30)
 
-        println("Introduce un número entre [${valorMin.toInt()} - ${valorMax.toInt()}]: ")
+        println("Introduce un número entre [${valorMin} - ${valorMax}]: ")
         val numeroIntro: Int = readln().toInt()
 
-        if (valorMax.toInt() - numeroIntro > numeroIntro - valorMin.toInt()) {
+        if (valorMax - numeroIntro > numeroIntro - valorMin) {
             TipoSerie.serieCreciente(valorMax, numeroIntro)
         } else {
             TipoSerie.serieDecreciente(valorMin, numeroIntro)
@@ -49,6 +49,6 @@ class UserMenu {
     }
 
     private fun jugarAhorcado() {
-        //TODO: Llamar al método jugar() de la clase Ahorcado
+        Ahorcado.jugar()
     }
 }
